@@ -1,52 +1,3 @@
-// const express = require('express');
-// const dotenv = require('dotenv');
-// const { GoogleGenerativeAI } = require('@google/generative-ai');
-
-// dotenv.config();
-
-// const app = express();
-// const port = process.env.PORT || 3000;
-
-// // Middleware to parse JSON request bodies
-// app.use(express.json());
-
-// // Initialize the Google Generative AI with your API key
-// const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY);
-// const model = genAI.getGenerativeModel({ model: 'gemini-2.5-flash' });
-
-// // Define the action: summarizing text
-// app.post('/summarize', async (req, res) => {
-//   try {
-//     const { text } = req.body;
-
-//     if (!text) {
-//       return res.status(400).json({ error: 'Text is required in the request body.' });
-//     }
-
-//     const prompt = `so when i provide a number , i need you to sugest just a whole number as the response , the number you suggest should be between 0.1% to 30% of the number recieved... depending on your mood:\n\n${text}`;
-
-//     const result = await model.generateContent(prompt);
-//     const response = await result.response;
-//     const summary = response.text();
-
-//     res.json({ summary });
-
-//   } catch (error) {
-//     console.error('Error calling Gemini API:', error);
-//     res.status(500).json({ error: 'Failed to generate summary.' });
-//   }
-// });
-
-// app.get('/', async(req, res) => {
-//     res.json({
-//         response: "i am here"
-//     })
-// });
-
-// // Start the server
-// app.listen(port, () => {
-//   console.log(`Server is running on http://localhost:${port}`);
-// });
 
 const express = require('express');
 const dotenv = require('dotenv');
@@ -95,19 +46,3 @@ app.get('/', (req, res) => {
 app.listen(port, () => {
   console.log(`Server running on http://localhost:${port}`);
 });
-
-
-
-// import { GoogleGenAI } from "@google/genai";
-
-// const ai = new GoogleGenAI({});
-
-// async function main() {
-//   const response = await ai.models.generateContent({
-//     model: "gemini-2.5-flash",
-//     contents: "Explain how AI works in a few words",
-//   });
-//   console.log(response.text);
-// }
-
-// await main();
