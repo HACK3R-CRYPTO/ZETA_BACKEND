@@ -58,7 +58,7 @@ const port = process.env.PORT || 3000;
 
 app.use(express.json());
 
-const genAI = new GoogleGenerativeAI('AIzaSyAuvOKi6t1nwKj4g5wDkXUv5XgvEf241q8');
+const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY);
 const model = genAI.getGenerativeModel({ model: 'gemini-2.5-flash' });
 
 app.post('/suggest-move', async (req, res) => {
